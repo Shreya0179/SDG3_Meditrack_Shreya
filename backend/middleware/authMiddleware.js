@@ -1,0 +1,28 @@
+import jwt from "jsonwebtoken";
+
+const authMiddleware = (req, res, next) => {
+  const token = req.headers.authorization;
+
+  if (!token) {
+    return res.status(401).json({
+      message: "Access Denied",
+    });
+  }
+
+  try {
+    const verified = jwt.verify(
+      token.replace("Bearer ", ""),
+      "meditracksecret"
+    );
+
+    req.user = verified;
+
+    next();
+  } catch (error) {
+    res.status(401).json({
+      message: "Invalid Token",
+    });
+  }
+};
+
+export default authMiddleware;
