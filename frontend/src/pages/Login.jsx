@@ -36,7 +36,8 @@ localStorage.setItem("user", JSON.stringify(res.data.user));
 alert("Login Successful");
 
 // Force React to reload after login
-window.location.href = "/dashboard";
+//window.location.href = "/dashboard";
+navigate("/dashboard", { replace: true });
     } catch (error) {
       alert(error.response?.data?.message || "Login Failed");
     }
