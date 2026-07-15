@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://sdg3-meditrack-shreya.onrender.com/",
+  baseURL: "https://sdg3-meditrack-shreya.onrender.com/api",
 });
 
 api.interceptors.request.use((config) => {
