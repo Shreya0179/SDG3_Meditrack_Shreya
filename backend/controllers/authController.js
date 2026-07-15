@@ -61,7 +61,7 @@ export const loginUser = async (req, res) => {
 
     const token = jwt.sign(
       { id: user._id },
-      "meditracksecret",
+      process.env.JWT_SECRET,
       {
         expiresIn: "1d",
       }
