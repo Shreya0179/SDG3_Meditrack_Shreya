@@ -180,7 +180,7 @@ The AI assistant is integrated using the OpenRouter API and can provide general 
 ---
 
 
-## 👩‍💻 Developer
+## 👩‍💻 Developed by
 
 **Shreya**
 
